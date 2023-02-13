@@ -5,8 +5,8 @@
         <div class="container">
             <div class="row mt-5">
                 <div class="col-sm-8 col-md-offset-2">
-                    <h1 class="alert alert-success text-center">Edit Updated Studend</h1>
-                    <form method="post">
+                    <h1 class="alert alert-success text-center">Edit Updated Student</h1>
+                    <form method="post" action="/student/update/<%=data._id;%>">
                         <div class="mb-3">
                             <label class="form-label" for="name">Name</label>
                             <input class="form-control" type="text" id="name" name="name" value="<%=data.name %>">

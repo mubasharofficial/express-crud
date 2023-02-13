@@ -36,20 +36,40 @@ class StudentController {
             // console.log(req.params.id)
             const student_id = req.params.id;
             const result = await StudentModel.findById(student_id);
-            console.log(result)
+            // console.log(result)
             res.render("edit",{data:result}); 
         }
         catch(error){
-
+            console.log("Could Not fetch Record Due to :",error)
         }
 
     }
 
     static updateDocById = async(req,res) =>{
+        try{
+            // console.log(req.params.id)
+            const student_id = req.params.id;
+            const {name,age,fee} = req.body
+            const result = await StudentModel.findByIdAndUpdate(student_id,{name:name,age:age,fess:fee});
+            // console.log(result)
         res.redirect("/student");
+        }
+        catch(error){
+                console.log("Could Not Update Due to :",error)
+        }
     }
-    static DeleteDocById = (req,res) =>{
-        res.redirect("/student");
+    static DeleteDocById = async(req,res) =>{
+        try{
+            // console.log(req.params.id)
+            const student_id = req.params.id;
+            const result = await StudentModel.findByIdAndDelete(student_id);
+            // console.log(result)
+            res.redirect("/student");
+        }
+        catch(error){
+            console.log("Could Not fetch Record Due to :",error)
+        }
+        
     }
 }
 export default StudentController;

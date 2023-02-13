@@ -6,7 +6,7 @@ router.get('/',StudentControler.getAllDoc);
 router.post('/create', StudentControler.createDoc);
 router.get('/edit/:id',StudentControler.editDoc);
 router.post('/update/:id',StudentControler.updateDocById);
-router.post('/delete/:id',StudentControler.DeleteDocById);
+router.get('/delete/:id',StudentControler.DeleteDocById);
 
 
 export default router;
